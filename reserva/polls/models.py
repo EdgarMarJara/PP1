@@ -30,6 +30,21 @@ class reserva(models.Model) :
     precio = models.CharField(max_length = 100)
     estado = models.CharField(max_length = 100)
 
+class empelado(models.Model) : 
+    id = models.SmallIntegerField(primary_key= True)
+    nombre = models.CharField(max_length=100)
+    departamento = models.CharField(max_length=100) 
+    fecha_inicio = models.DateField()
+    dias_trabajo = models.CharField(max_length=100)
+    turno = models.CharField(max_length=100)
+    horario_in = models.DateTimeField()
+    horario_out = models.DateTimeField()
+
+class jornada(models.Model) : 
+    id = models.SmallIntegerField(primary_key= True) 
+    empelado.id = models.SmallIntegerField(primary_key= True) 
+    fecha = models.DateField()
+    tipo_marc = models.CharField() 
 
     
 
